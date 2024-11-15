@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#A5D6A7"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvSTT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="1. "
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tên khách hàng"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tvSTT"
+        app:layout_constraintTop_toBottomOf="@+id/tvSTT"></TextView>
+
+    <TextView
+        android:id="@+id/tvSDT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="8dp"
+        android:text="0987654321"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"></TextView>
+
+    <TextView
+        android:id="@+id/tvDiaChi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Địa chỉ"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tvSDT"
+        app:layout_constraintTop_toBottomOf="@+id/tvSDT"></TextView>
+
+    <TextView
+        android:id="@+id/tvTenGoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Gói dịch vụ"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tvDiaChi"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiaChi"></TextView>
+
+    <TextView
+        android:id="@+id/tvNgayThiCong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ngày thi công"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tvTenGoi"
+        app:layout_constraintTop_toBottomOf="@+id/tvTenGoi"></TextView>
+
+    <TextView
+        android:id="@+id/tvTrangThai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Chờ xác nhận"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tvNgayThiCong"
+        app:layout_constraintTop_toBottomOf="@+id/tvNgayThiCong"></TextView>
+
+    <Button
+        android:id="@+id/btnCapNhat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/mauxanh"
+        android:text="Cập nhật trạng thái"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/tvTrangThai"
+        app:layout_constraintTop_toBottomOf="@+id/tvTrangThai"></Button>
+
+    <Button
+        android:id="@+id/btnCapNhatHoaDon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/mauxanh"
+        android:text="Xác nhận thanh toán"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/btnCapNhat"
+        app:layout_constraintTop_toTopOf="@+id/btnCapNhat"></Button>
+
+    <Button
+        android:id="@+id/btnDaThanhToan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/mauxanh"
+        android:text="Đã thanh toán"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCapNhat"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

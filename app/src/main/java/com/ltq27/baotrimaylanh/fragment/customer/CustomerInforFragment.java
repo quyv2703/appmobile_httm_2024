@@ -1,0 +1,98 @@
+package com.ltq27.baotrimaylanh.fragment.customer;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.ltq27.baotrimaylanh.activity.LoginActivity;
+import com.ltq27.baotrimaylanh.activity.customer.dto.CustomerManager;
+import com.ltq27.baotrimaylanh.activity.customer.dto.CustomerDTO;
+import com.ltq27.baotrimaylanh.databinding.FragmentCustomerInforBinding;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link CustomerInforFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class CustomerInforFragment extends Fragment {
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    private FragmentCustomerInforBinding bd;
+
+    public CustomerInforFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment CustomerInforFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static CustomerInforFragment newInstance(String param1, String param2) {
+        CustomerInforFragment fragment = new CustomerInforFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        bd=FragmentCustomerInforBinding.inflate(LayoutInflater.from(getContext()));
+        // Inflate the layout for this fragment
+        return bd.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        bd.btnDangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+        // Trong Activity hoặc Fragment của trang thông tin cá nhân
+        CustomerDTO user = CustomerManager.getInstance().getUser();
+        if (user != null) {
+            bd.tvName.setText(user.getName());
+            bd.tvPhoneNumber.setText(user.getPhoneNumber());
+            bd.tvAddress.setText(user.getAddress());
+            bd.tvBirthYear.setText(user.getBirthYear());
+            bd.tvGender.setText(user.getGender());
+        } else {
+            // Xử lý trường hợp không tìm thấy thông tin người dùng
+        }
+    }
+}

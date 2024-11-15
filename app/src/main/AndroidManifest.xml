@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Baotrimaylanh"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".activity.admin.BoLocNhanXetActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Baotrimaylanh" />
+        <activity
+            android:name=".activity.admin.capnhatphancong.CapNhatPhanCongBiTuChoiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin.capnhatphancong.DanhSachPhanCongBiTuChoiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.CustomerXemTrangThaiDatLichActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin.ThemGoiDichVuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.CustomerMainWithBottomNavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.ThongTinKhachHangActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.admin.ChonNgayBaoCaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin.BaoCaoDoanhThuTheoNgayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.DanhSachHoaDonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.CustomerXemDanhSachGoiDichVuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin.BaoCaoDoanhThuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.NhanXetActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.employee.CapNhatTrangThaiPhanCongActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.employee.DanhSachCongViecActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.employee.EmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin.ChonPhanCongNhanVienActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.admin.DanhSachDatLichActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.DatLichActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customer.CustomerMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.admin.ListEmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.admin.GoiDichVuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.admin.GiaDichVuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.admin.LoaiMayLanhActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DangKiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.admin.AdminMainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
